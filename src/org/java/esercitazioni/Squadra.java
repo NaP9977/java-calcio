@@ -15,11 +15,10 @@ package org.java.esercitazioni;
 
 import java.util.ArrayList;
 
-public class Squadra extends Persona{
+public class Squadra{
     private ArrayList <Persona> squadra;
 
     public Squadra() {
-        super();
         this.squadra = new ArrayList<>();
     }
 

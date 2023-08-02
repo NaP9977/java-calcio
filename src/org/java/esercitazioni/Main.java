@@ -11,6 +11,8 @@
 ////BONUS: nella classe Persona, al posto dell’età, memorizzare la data di nascita
 package org.java.esercitazioni;
 
+import java.util.Random;
+
 public class Main {
     public static final String [] NomiCognomiGiocatori = { "Marco Rossi", "Alessio Bianchi", "Lorenzo Russo", "Simone Ferrara", "Andrea Martini",
             "Luca Rossetti", "Davide Fontana", "Giovanni Ricci", "Filippo Bellini", "Nicolas De Luca",
@@ -37,6 +39,17 @@ public class Main {
 
     public static final String[] RuoliGiocatori = {"portiere", "difensore", "attaccante", "centrocampista"};
     public static void main(String[] args) {
+   Squadra squadra = new Squadra();
+        Random random = new Random();
+        int indiceRandom = random.nextInt(16, 40);
+        for(int i=0; i < NomiCognomiGiocatori.length; i++){
+
+        }
+
+
+
+
+
 
     }
 }

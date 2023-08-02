@@ -18,8 +18,8 @@ public class Giocatore extends Persona{
 
 
 
-    public Giocatore(int eta, String ruolo) {
-          super();
+    public Giocatore(int eta, String nome, String ruolo) {
+         super(eta, nome);
          this.ruolo = ruolo;
 
     }

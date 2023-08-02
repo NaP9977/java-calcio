@@ -15,8 +15,8 @@ public class Allenatore extends Persona {
     private String stileDiGiocoOffensivo;
     private String stileDiGiocoDifensivo;
 
-    public Allenatore() {
-      super();
+    public Allenatore(int eta, String nome) {
+        super(eta, nome);
         this.stileDiGiocoOffensivo = stileDiGiocoOffensivo;
         this.stileDiGiocoDifensivo = stileDiGiocoDifensivo;
     }

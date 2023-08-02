@@ -11,13 +11,11 @@
 ////BONUS: nella classe Persona, al posto dell’età, memorizzare la data di nascita
 package org.java.esercitazioni;
 
-import java.util.Random;
-
 public class Persona {
     private String nome;
     private int eta;
 
-    public Persona() {
+    public Persona(int eta, String nome) {
         this.nome = nome;
         this.eta = eta;
     }
@@ -32,10 +30,5 @@ public class Persona {
         return eta;
     }
 
-    private void generaEtaRandom (){
-        Random random = new Random();
-        int etaRandom = random.nextInt(16,39);
-        this.eta = etaRandom;
-    }
 
 }
