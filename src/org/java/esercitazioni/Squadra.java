@@ -15,20 +15,24 @@ package org.java.esercitazioni;
 
 import java.util.ArrayList;
 
-public class Squadra{
+public class Squadra {
     private ArrayList <Persona> squadra;
 
     public Squadra() {
         this.squadra = new ArrayList<>();
     }
 
-    public ArrayList<Persona> getSquadra() {
+    public ArrayList <Persona> getSquadra() {
         return squadra;
     }
-public void AggiungiMembri (Persona persona){
+public void aggiungiMembri (Persona persona){
         squadra.add(persona);
 }
 
-
-
+    @Override
+    public String toString() {
+        return "Squadra: " +
+                "squadra = " + squadra
+                ;
+    }
 }

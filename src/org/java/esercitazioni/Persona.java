@@ -30,5 +30,11 @@ public class Persona {
         return eta;
     }
 
-
+    @Override
+    public String toString() {
+        return "Persona: " +
+                "nome = '" + nome + '\'' +
+                ", eta = " + eta
+                ;
+    }
 }

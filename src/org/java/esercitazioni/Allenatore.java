@@ -12,24 +12,21 @@
 package org.java.esercitazioni;
 
 public class Allenatore extends Persona {
-    private String stileDiGiocoOffensivo;
-    private String stileDiGiocoDifensivo;
+    private String stileDiGioco;
+
 
     public Allenatore(int eta, String nome) {
         super(eta, nome);
-        this.stileDiGiocoOffensivo = stileDiGiocoOffensivo;
-        this.stileDiGiocoDifensivo = stileDiGiocoDifensivo;
+        this.stileDiGioco = stileDiGioco;
+
     }
 
-    public String getStileDiGiocoOffensivo() {
-        return stileDiGiocoOffensivo;
+    public String getStileDiGioco() {
+        return stileDiGioco;
     }
 
-    public String getStileDiGiocoDifensivo() {
-        return stileDiGiocoDifensivo;
+    @Override
+    public String toString() {
+        return super.toString() + "Stile di gioco: " + stileDiGioco;
     }
-
-
-
-
 }

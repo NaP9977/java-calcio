@@ -21,14 +21,20 @@ public class Giocatore extends Persona{
     public Giocatore(int eta, String nome, String ruolo) {
          super(eta, nome);
          this.ruolo = ruolo;
-
     }
+
+
 
     public String getRuolo() {
         return ruolo;
     }
 
+    public void setRuolo(String ruolo) {
+        this.ruolo = ruolo;
+    }
 
-
-
+    @Override
+    public String toString() {
+        return super.toString() + " " + "ruolo: " + ruolo;
+    }
 }

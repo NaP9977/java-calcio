@@ -41,11 +41,14 @@ public class Main {
     public static void main(String[] args) {
    Squadra squadra = new Squadra();
         Random random = new Random();
-        int indiceRandom = random.nextInt(16, 40);
         for(int i=0; i < NomiCognomiGiocatori.length; i++){
-
+            int etaRandom = random.nextInt(16, 39);
+            int indiceRandom = random.nextInt(0, NomiCognomiGiocatori.length);
+            int indiceRuoli = random.nextInt(0, RuoliGiocatori.length);
+           Giocatore giocatore = new Giocatore(etaRandom, NomiCognomiGiocatori[indiceRandom], RuoliGiocatori[indiceRuoli]);
+           squadra.aggiungiMembri(giocatore);
         }
-
+System.out.println(squadra);
 
 
 
