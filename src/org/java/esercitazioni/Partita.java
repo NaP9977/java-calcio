@@ -25,7 +25,7 @@ public class Partita {
 
     Arbitro arbitro;
 
-    public Partita(Squadra squadraDiCasa, Squadra squadraOspite) {
+    public Partita(Squadra squadraDiCasa, Squadra squadraOspite, Arbitro arbitro) {
         this.goal = 0;
         this.squadraDiCasa = squadraDiCasa;
         this.squadraOspite = squadraOspite;
@@ -49,33 +49,38 @@ public class Partita {
         return random.nextBoolean();
     }
 
-public String segnaSquadra() {
-    Random random = new Random();
-    int randomNumero = random.nextInt(1,2);
-    if(randomNumero == 1)
-        return "Ha segnato la squadra di casa";
+    public String segnaSquadra() {
+        Random random = new Random();
+        int randomNumero = random.nextInt(1, 2);
+        if (statoPartita()) {
+            if (goal > 1) {
+                if (randomNumero == 1) {
+                    segnaGoal();
+                    return "Ha segnato la squadra di casa";
+                } else if (randomNumero == 2) {
+                    segnaGoal();
+                    return "Ha segnato la squadra ospite";
+                }
+            }
+        }
 
-    else if(randomNumero == 2) {
-        return "Ha segnato la squadra ospite";
+        return "La partita non è comimciata";
     }
-    return "La partita è finita 0-0";
+
+    public void segnaGoal() {
+        if (statoPartita())
+            goal++;
     }
-
-
-
-
-  public void segnaGoal(){
-    if(statoPartita())
-        goal++;
-     }
 
     @Override
     public String toString() {
         return "Partita:" +
                 "goal =" + goal +
                 " Squadra di Casa = " + squadraDiCasa +
-                " Squadra ospite = " + squadraOspite + " " +statoPartita() +
-                ", arbitro = " + arbitro + "Ha segnato:" + segnaSquadra();
+                ", Squadra ospite = " + squadraOspite + " " + statoPartita() +
+                ", arbitro = " + arbitro + ", " + segnaSquadra();
 
     }
 }
+
+

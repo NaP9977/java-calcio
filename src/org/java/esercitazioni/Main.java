@@ -45,34 +45,30 @@ public class Main {
         int etaRandomAllenatore = random.nextInt(35, 70);
         int indiceStili = random.nextInt(0, StiliDiGioco.length);
         Allenatore allenatore = new Allenatore(etaRandomAllenatore, "Allenatore",StiliDiGioco[indiceStili] );
+        Arbitro arbitro = new Arbitro(etaRandomAllenatore, "Arbitro", "Primo uomo");
         Squadra squadra = new Squadra(allenatore);
+        Squadra squadraDiCasa = new Squadra(allenatore);
+        Squadra squadraOspite = new Squadra(allenatore);
         for(int i=0; i < NomiCognomiGiocatori.length; i++) {
             int etaRandom = random.nextInt(16, 39);
             int indiceRandom = random.nextInt(0, NomiCognomiGiocatori.length);
             int indiceRuoli = random.nextInt(0, RuoliGiocatori.length);
             Giocatore giocatore = new Giocatore(etaRandom, NomiCognomiGiocatori[indiceRandom], RuoliGiocatori[indiceRuoli]);
             squadra.aggiungiMembri(giocatore);
-
+            squadraOspite.aggiungiMembri(giocatore);
+            squadraDiCasa.aggiungiMembri(giocatore);
         }
 
-
-
-
-
-        Squadra squadraDiCasa = new Squadra(allenatore);
-
-
-        Squadra squadraOspite = new Squadra(allenatore);
-
-        Partita partita = new Partita(squadraDiCasa, squadraOspite);
+        Partita partita = new Partita(squadraDiCasa, squadraOspite, arbitro);
          while(partita.statoPartita()){
              partita.statoPartita();
-             partita.segnaGoal();
-             partita.segnaGoal();
-             partita.segnaGoal();
-         }
-        System.out.println(partita);
+           partita.segnaGoal();
+           partita.segnaGoal();
+           partita.segnaGoal();
 
+         }
+
+        System.out.println(partita);
 
 
 
