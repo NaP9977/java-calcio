@@ -17,6 +17,53 @@
 package org.java.esercitazioni;
 
 public class Partita {
+    private int goal;
+    Squadra squadraDiCasa;
+    Squadra squadraOspite;
+    boolean iniziata;
 
+    public Partita(Squadra squadraDiCasa, Squadra squadraOspite, boolean iniziata) {
+        this.goal = goal;
+        this.squadraDiCasa = squadraDiCasa;
+        this.squadraOspite = squadraOspite;
+        this.iniziata = iniziata;
+    }
+
+    public int getGoal() {
+        return goal;
+    }
+
+    public Squadra getSquadraDiCasa() {
+        return squadraDiCasa;
+    }
+
+    public Squadra getSquadraOspite() {
+        return squadraOspite;
+    }
+
+    public String statoPartita() {
+        if (iniziata)
+            return "Partita Iniziata";
+        else {
+            return "Errore, la partita non è ancora iniziata";
+        }
+    }
+
+
+
+    public String segnaSquadraDiCasa(){
+        segnaGoal();
+        return "Ha segnato la " + squadraDiCasa;
+
+    }
+
+    public String segnaSquadraOspite(){
+        segnaGoal();
+        return "Ha segnato la " + squadraOspite;
+    }
+  public void segnaGoal(){
+       if(iniziata)
+        goal++;
+     }
 
 }
