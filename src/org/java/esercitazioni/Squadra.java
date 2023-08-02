@@ -19,8 +19,7 @@ public class Squadra extends Persona{
     private ArrayList <Persona> squadra;
 
     public Squadra() {
-
-        super(eta);
+        super();
         this.squadra = new ArrayList<>();
     }
 
