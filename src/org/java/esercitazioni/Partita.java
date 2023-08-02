@@ -16,17 +16,20 @@
 
 package org.java.esercitazioni;
 
+import java.util.Random;
+
 public class Partita {
     private int goal;
     Squadra squadraDiCasa;
     Squadra squadraOspite;
-    boolean iniziata;
 
-    public Partita(Squadra squadraDiCasa, Squadra squadraOspite, boolean iniziata) {
-        this.goal = goal;
+    Arbitro arbitro;
+
+    public Partita(Squadra squadraDiCasa, Squadra squadraOspite) {
+        this.goal = 0;
         this.squadraDiCasa = squadraDiCasa;
         this.squadraOspite = squadraOspite;
-        this.iniziata = iniziata;
+        this.arbitro = arbitro;
     }
 
     public int getGoal() {
@@ -41,29 +44,38 @@ public class Partita {
         return squadraOspite;
     }
 
-    public String statoPartita() {
-        if (iniziata)
-            return "Partita Iniziata";
-        else {
-            return "Errore, la partita non è ancora iniziata";
-        }
+    public boolean statoPartita() {
+        Random random = new Random();
+        return random.nextBoolean();
+    }
+
+public String segnaSquadra() {
+    Random random = new Random();
+    int randomNumero = random.nextInt(1,2);
+    if(randomNumero == 1)
+        return "Ha segnato la squadra di casa";
+
+    else if(randomNumero == 2) {
+        return "Ha segnato la squadra ospite";
+    }
+    return "La partita è finita 0-0";
     }
 
 
 
-    public String segnaSquadraDiCasa(){
-        segnaGoal();
-        return "Ha segnato la " + squadraDiCasa;
 
-    }
-
-    public String segnaSquadraOspite(){
-        segnaGoal();
-        return "Ha segnato la " + squadraOspite;
-    }
   public void segnaGoal(){
-       if(iniziata)
+    if(statoPartita())
         goal++;
      }
 
+    @Override
+    public String toString() {
+        return "Partita:" +
+                "goal =" + goal +
+                " Squadra di Casa = " + squadraDiCasa +
+                " Squadra ospite = " + squadraOspite + " " +statoPartita() +
+                ", arbitro = " + arbitro + "Ha segnato:" + segnaSquadra();
+
+    }
 }

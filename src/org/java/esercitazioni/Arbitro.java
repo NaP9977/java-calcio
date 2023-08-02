@@ -26,4 +26,10 @@ private String ruolo;
     public String getRuolo() {
         return ruolo;
     }
+
+    @Override
+    public String toString() {
+        return "Arbitro:" +
+                "ruolo ='" + ruolo;
+    }
 }

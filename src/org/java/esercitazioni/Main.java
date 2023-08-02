@@ -57,9 +57,22 @@ public class Main {
 
 
 
-System.out.println(squadra);
 
-        Squadra
+
+        Squadra squadraDiCasa = new Squadra(allenatore);
+
+
+        Squadra squadraOspite = new Squadra(allenatore);
+
+        Partita partita = new Partita(squadraDiCasa, squadraOspite);
+         while(partita.statoPartita()){
+             partita.statoPartita();
+             partita.segnaGoal();
+             partita.segnaGoal();
+             partita.segnaGoal();
+         }
+        System.out.println(partita);
+
 
 
 
