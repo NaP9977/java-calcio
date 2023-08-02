@@ -38,17 +38,27 @@ public class Main {
 
 
     public static final String[] RuoliGiocatori = {"portiere", "difensore", "attaccante", "centrocampista"};
+
+    public static final String[] StiliDiGioco = {"difensivo", "offensivo"};
     public static void main(String[] args) {
-   Squadra squadra = new Squadra();
         Random random = new Random();
-        for(int i=0; i < NomiCognomiGiocatori.length; i++){
+        int etaRandomAllenatore = random.nextInt(35, 70);
+        int indiceStili = random.nextInt(0, StiliDiGioco.length);
+        Allenatore allenatore = new Allenatore(etaRandomAllenatore, "Allenatore",StiliDiGioco[indiceStili] );
+        Squadra squadra = new Squadra(allenatore);
+        for(int i=0; i < NomiCognomiGiocatori.length; i++) {
             int etaRandom = random.nextInt(16, 39);
             int indiceRandom = random.nextInt(0, NomiCognomiGiocatori.length);
             int indiceRuoli = random.nextInt(0, RuoliGiocatori.length);
-           Giocatore giocatore = new Giocatore(etaRandom, NomiCognomiGiocatori[indiceRandom], RuoliGiocatori[indiceRuoli]);
-           squadra.aggiungiMembri(giocatore);
+            Giocatore giocatore = new Giocatore(etaRandom, NomiCognomiGiocatori[indiceRandom], RuoliGiocatori[indiceRuoli]);
+            squadra.aggiungiMembri(giocatore);
+
         }
+
+
+
 System.out.println(squadra);
+
 
 
 

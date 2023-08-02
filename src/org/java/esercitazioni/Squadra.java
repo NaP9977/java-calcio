@@ -17,9 +17,11 @@ import java.util.ArrayList;
 
 public class Squadra {
     private ArrayList <Persona> squadra;
+   private Allenatore allenatore;
 
-    public Squadra() {
+    public Squadra(Allenatore allenatore) {
         this.squadra = new ArrayList<>();
+        this.allenatore = allenatore;
     }
 
     public ArrayList <Persona> getSquadra() {
@@ -32,7 +34,8 @@ public void aggiungiMembri (Persona persona){
     @Override
     public String toString() {
         return "Squadra: " +
-                "squadra = " + squadra
+                "squadra = " + squadra +
+                ", allenatore =" + allenatore
                 ;
     }
 }

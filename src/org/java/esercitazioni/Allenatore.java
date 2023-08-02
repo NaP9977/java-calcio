@@ -15,7 +15,7 @@ public class Allenatore extends Persona {
     private String stileDiGioco;
 
 
-    public Allenatore(int eta, String nome) {
+    public Allenatore(int eta, String nome, String stileDiGioco) {
         super(eta, nome);
         this.stileDiGioco = stileDiGioco;
 
@@ -27,6 +27,6 @@ public class Allenatore extends Persona {
 
     @Override
     public String toString() {
-        return super.toString() + "Stile di gioco: " + stileDiGioco;
+        return super.toString() + " Stile di gioco: " + stileDiGioco;
     }
 }
